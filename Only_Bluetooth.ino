@@ -1,5 +1,5 @@
 #include<SoftwareSerial.h>
-SoftwareSerial BTSerial(2, 3);
+SoftwareSerial BTSerial(7, 8);
 
 void setup()
 {
