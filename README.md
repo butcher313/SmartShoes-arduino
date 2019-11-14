@@ -13,3 +13,6 @@ https://blog.naver.com/PostView.nhn?blogId=eduino&logNo=221121406317
  2. 압력센서를 연결하여 압력센서 값 안드로이드로 전송하기 완료
  
  3. 블루투스 통신 코드와 기존 안드로이드 앱 코드 합치기 
+ 
+ 4. 아두이노 UART 통신 :
+ http://blog.naver.com/PostView.nhn?blogId=icbanq&logNo=221118276137&parentCategoryNo=27&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
