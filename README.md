@@ -17,3 +17,4 @@ https://blog.naver.com/PostView.nhn?blogId=eduino&logNo=221121406317
  4. 아두이노 UART 통신 :
  1) http://blog.naver.com/PostView.nhn?blogId=icbanq&logNo=221118276137&parentCategoryNo=27&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
  2) http://www.iamamaker.kr/ko/tutorials/install_usb2uart_driver/
+ 3) https://www.youtube.com/watch?v=5AlOUPbSjZI
