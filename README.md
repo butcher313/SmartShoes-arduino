@@ -18,3 +18,6 @@ https://blog.naver.com/PostView.nhn?blogId=eduino&logNo=221121406317
  1) http://blog.naver.com/PostView.nhn?blogId=icbanq&logNo=221118276137&parentCategoryNo=27&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
  2) http://www.iamamaker.kr/ko/tutorials/install_usb2uart_driver/
  3) https://www.youtube.com/watch?v=5AlOUPbSjZI
+ 
+ 5. Zigbee 세팅 
+  1) http://blog.naver.com/PostView.nhn?blogId=roboholic84&logNo=220962532822&parentCategoryNo=&categoryNo=30&viewDate=&isShowPopularPosts=false&from=postView
