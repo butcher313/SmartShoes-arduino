@@ -15,4 +15,5 @@ https://blog.naver.com/PostView.nhn?blogId=eduino&logNo=221121406317
  3. 블루투스 통신 코드와 기존 안드로이드 앱 코드 합치기 
  
  4. 아두이노 UART 통신 :
- http://blog.naver.com/PostView.nhn?blogId=icbanq&logNo=221118276137&parentCategoryNo=27&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
+ 1) http://blog.naver.com/PostView.nhn?blogId=icbanq&logNo=221118276137&parentCategoryNo=27&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
+ 2) http://www.iamamaker.kr/ko/tutorials/install_usb2uart_driver/
