@@ -339,6 +339,7 @@ void loop() {
             /////////////////////////////////////////////
             int val3 = ypr[0] * 180/M_PI;
             Serial.print("각도 : " + String(val3) + "\n");
+            Serial.print("압력 : " + String(val0) + " " + String(val1) + " " + String(val2) + "\n");
             
              byte data = Serial.read(); //보내달라는 신호 저장
    if(data == 'A'){
