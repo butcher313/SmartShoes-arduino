@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="걸음 걸이의 올바른 유형"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="500px"
+                app:srcCompat="@drawable/foot1" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="match_parent"
+                android:layout_height="300px"
+                app:srcCompat="@drawable/foot2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="30px">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="올바른 걸음걸이의 필요성"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="걸음걸이는 의학적인 측면에서는 직·간접적으로 신체 건강에 영향을 미치는 요소로, 심리·문화적인 측면에서는 인상과 성격을 판단하는 요소가 되기도 한다." />
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="올바른 걸음걸이"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="뒤꿈치에서 2~3번째 발가락 사이로 무게중심이 이동하고, 뒤꿈치부터 땅에 닳고 발바닥, 엄지발가락 순으로 닿으면서 걸으며 발바닥 전체에 골고루 힘이 미치도록 한다. 발이 바깥쪽으로 7.5~10도 정도 벌려서 걷는다." />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잘못된 걸음걸이"
+                android:layout_marginTop="30px"
+                android:textStyle="bold"/>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="증상"
+                            android:gravity="center"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="문제점"
+                            android:gravity="center"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="팔자 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="-뒤꿈치에서 새끼발가락으로 무게중심 이동
+-발의 바깥쪽으로 7.5~12.5도 정도 이상 벌려서 걸음
+"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="무지외반증, 무릎관절, 고관절 척추 등 전신적 불균형 및   통증, 기능 저하"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="안짱 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="-뒤꿈치에서 엄지발가락으로 무게중심 이동
+-발이 안쪽으로 0~7.5도 이상 벌려서 걸음
+"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="퇴행성 관절염 오추전만"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="갈지자 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="-좌우로 비틀거림"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="신발의 뒤꿈치부분이 많이 닳음"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="일자 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView25"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="모델처럼 일자로 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="고관절에 과도한 부담을 줌"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView27"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="까치 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView288"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="발끝으로 걷는 걸음으로 몸 무게중심이 앞쪽으로 쏠림"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="척추가 앞으로 지나치게 휨"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView30"
+                            android:layout_width="200px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="넓은 보폭으로 걷기"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView31"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="보폭을 넓게 해서 걸음"
+                            android:background="@drawable/border"/>
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="400px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="고관절에 무리, 요통 유발"
+                            android:background="@drawable/border"/>
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="걸음걸이 교정으로 인해 예방할 수 있는 질병들"
+                android:layout_marginTop="30px"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1.	척추뼈 사이의 구조물인 디스크가 탈출된 허리디스크" />
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2.	위 척추뼈가 아래 척추뼈보다 배 쪽으로 밀려나면서 통증과 다리 저림을 일으키는 천추전방전위증" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3.	정면으로 봤을 때 척추가 옆으로 굽은 척추 측만증" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4.	엉덩이와 다리쪽으로 느껴지는 통증인 좌골신경통" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5.	관절을 보호하고 있는 연골의 손상이나 퇴행성 변화로 인해 관절을 이루는 뼈와 인대 등에 손상이 생겨 염증과 통증이 발생하는 질환인 퇴행성 관절염" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6.	엄지발가락의 중족지관절이 튀어나와 중앙쪽으로 굽어져 발의 형태가 변형된 무지외반증" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7.	발품치 뼈의 전내측과 다섯 발가락 뼈를 이어주어 발의 아치를 유지하고 발바닥이 받는 충격을 흡수하는 역할을 하는 족저막근에 반복적으로 미세한 손상이 일어나면서 염증이 발생하는 질환인 족저근막염" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="30px">
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="출처: http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322386"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="출처 : http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE06139422"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="특허 인용 : 출원인, 특허명, 특허번호, 출원일, 등록일"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="남서울대학교 산학협력단, 걸음걸이 교정 시스템, 1020160151165, 2016-11-14,2018-12-27"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="200px"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
