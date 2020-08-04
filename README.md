@@ -39,3 +39,9 @@ SmartShoes-arduino
 <br>
 
   * [아두이노 수신부/송신부 코드](https://github.com/butcher313/SmartShoes-arduino/tree/master/12-01Last)
+  
+<br>
+
+### 4. 안드로이드
+<br>
+ * [링크](https://github.com/butcher313/SmartShoes-android/blob/master/README.md)
