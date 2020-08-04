@@ -44,4 +44,5 @@ SmartShoes-arduino
 
 ### 4. 안드로이드
 <br>
+
  * [링크](https://github.com/butcher313/SmartShoes-android/blob/master/README.md)
