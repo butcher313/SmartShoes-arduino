@@ -49,6 +49,13 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
+    Integer sum_left = 0;
+    Integer sum_right = 0;
+    Integer sum = 0;
+
+    Integer newleft = 0;
+    Integer newright = 0;
+
     TextView editText1;
     TextView editText2;
     ImageView leftimage;
@@ -56,9 +63,7 @@ public class HomeFragment extends Fragment {
     Integer left;
     Integer right;
     Button button;
-    Integer sum;
-    Integer newleft;
-    Integer newright;
+
     String[] token = new String[4];
     boolean connect = false;
     TextView leftangle;
@@ -103,135 +108,54 @@ public class HomeFragment extends Fragment {
             public void onChanged(@Nullable String s) {
 
 
-
             }
         });
         return root;
     }
+
     public void onActivityCreated(Bundle b) {
+
         super.onActivityCreated(b);
-        editText1 = (TextView)getView().findViewById(R.id.textView3);
-        editText2 = (TextView)getView().findViewById(R.id.textView4);
-        leftimage = (ImageView)getView().findViewById(R.id.imageView3);
-        rightimage = (ImageView)getView().findViewById(R.id.imageView4);
-        button = (Button)getView().findViewById(R.id.button);
+        editText1 = (TextView) getView().findViewById(R.id.textView3);
+        editText2 = (TextView) getView().findViewById(R.id.textView4);
+        leftimage = (ImageView) getView().findViewById(R.id.imageView3);
+        rightimage = (ImageView) getView().findViewById(R.id.imageView4);
+        button = (Button) getView().findViewById(R.id.button);
         leftangle = (TextView) getView().findViewById(R.id.textView6);
         rightangle = (TextView) getView().findViewById(R.id.textView7);
+
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                //left = Integer.parseInt(editText1.getText().toString());
-                //right = Integer.parseInt(editText2.getText().toString());
 
-                //leftimage.getLayoutParams().height = 1022 - (left*1022/100);
-                //rightimage.getLayoutParams().height = 1022- (right*1022/100);
-                left = Integer.parseInt(token[0]);
-                right = Integer.parseInt(token[2]);
-                sum = left+right;
-                newleft = left * 100/sum;
-                newright = right * 100/sum;
-                Toast.makeText(getContext(),String.valueOf(newleft), Toast.LENGTH_LONG).show();
-
-
-                leftimage.getLayoutParams().height = 1022 - (newleft*1022/100);
-                rightimage.getLayoutParams().height = 1022- (newright*1022/100);
+                leftimage.getLayoutParams().height = 1022 - (newleft * 1022 / 100);
+                rightimage.getLayoutParams().height = 1022 - (newright * 1022 / 100);
                 leftimage.requestLayout();
                 rightimage.requestLayout();
-                editText1.setText(newleft+"%");
-                editText1.setText(newright+"%");
+                editText1.setText(newleft + "%");
+                editText2.setText(newright + "%");
                 leftangle.setText(token[1]);
                 rightangle.setText(token[3]);
+
+                sum_right = sum_left = 0; //버튼 누르면 누적합 UI에 표시함과 동시에 0으로 초기화
 
             }
         });
 
+        mTvBluetoothStatus = (TextView) getView().findViewById(R.id.tvBluetoothStatus);
 
-        (new Thread(new Runnable()
-        {
+        internalPressure = (TextView) getView().findViewById(R.id.internalPressure); //기울기, 압력 받을 객체
+        internalAngle = (TextView) getView().findViewById(R.id.internalAngle);
+        externalPressure = (TextView) getView().findViewById(R.id.externalPressure);
+        externalAngle = (TextView) getView().findViewById(R.id.externalAngle);
 
-            @Override
-            public void run()
-            {
-
-                while (!Thread.interrupted())
-                    try
-                    {
-                        Thread.sleep(1000);
-                        getActivity().runOnUiThread(new Runnable() // start actions in UI thread
-                        {
-
-                            @Override
-                            public void run()
-                            {
-                                if(connect){
-                                    try {
-                                        left = Integer.parseInt(token[0]);
-                                    } catch(NumberFormatException e){
-                                        left= 0;
-                                    }catch (Exception e){
-                                        left= 0;
-                                    }
-                                    try {
-                                        right = Integer.parseInt(token[2]);
-                                    } catch(NumberFormatException e){
-                                        right= 0;
-                                    }catch (Exception e){
-                                        right= 0;
-                                    }
-                                    if(left<0)
-                                        left=0;
-                                    if(right<0)
-                                        right=0;
-
-                                sum = left+right;
-                                if(sum==0){
-                                    newleft=50;
-                                    newright=50;
-                                }
-                                else {
-                                    newleft = left * 100 / sum;
-                                    newright = right * 100 / sum;
-                                }
-                                Toast.makeText(getContext(),String.valueOf(newleft), Toast.LENGTH_LONG).show();
-
-
-                                leftimage.getLayoutParams().height = 1022 - (newleft*1022/100);
-                                rightimage.getLayoutParams().height = 1022- (newright*1022/100);
-                                leftimage.requestLayout();
-                                rightimage.requestLayout();
-                                editText1.setText(newleft+"%");
-                                editText1.setText(newright+"%");
-                                leftangle.setText(token[1]);
-                                rightangle.setText(token[3]);}
-                            }
-                        });
-                    }
-
-                    catch (InterruptedException e)
-                    {
-                        // ooops
-                    }
-            }
-        })).start();
-
-    // 현재 시간을 반환
-
-
-
-        mTvBluetoothStatus = (TextView)getView().findViewById(R.id.tvBluetoothStatus);
-
-        internalPressure = (TextView)getView().findViewById(R.id.internalPressure); //기울기, 압력 받을 객체
-        internalAngle = (TextView)getView().findViewById(R.id.internalAngle);
-        externalPressure = (TextView)getView().findViewById(R.id.externalPressure);
-        externalAngle = (TextView)getView().findViewById(R.id.externalAngle);
-
-        mTvSendData =  (EditText) getView().findViewById(R.id.tvSendData);
-        mBtnBluetoothOn = (Button)getView().findViewById(R.id.btnBluetoothOn);
-        mBtnBluetoothOff = (Button)getView().findViewById(R.id.btnBluetoothOff);
-        mBtnConnect = (Button)getView().findViewById(R.id.btnConnect);
-        mBtnSendData = (Button)getView().findViewById(R.id.btnSendData);
+        mTvSendData = (EditText) getView().findViewById(R.id.tvSendData);
+        mBtnBluetoothOn = (Button) getView().findViewById(R.id.btnBluetoothOn);
+        mBtnBluetoothOff = (Button) getView().findViewById(R.id.btnBluetoothOff);
+        mBtnConnect = (Button) getView().findViewById(R.id.btnConnect);
+        mBtnSendData = (Button) getView().findViewById(R.id.btnSendData);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -257,19 +181,20 @@ public class HomeFragment extends Fragment {
         mBtnSendData.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mThreadConnectedBluetooth != null) {
+                if (mThreadConnectedBluetooth != null) {
                     mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
                     mTvSendData.setText("");
                 }
             }
         });
-        mBluetoothHandler = new Handler(){
-            public void handleMessage(android.os.Message msg){
-                if(msg.what == BT_MESSAGE_READ){
+        mBluetoothHandler = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                if (msg.what == BT_MESSAGE_READ) {
                     String readMessage = null;
 
                     try {
                         readMessage = new String((byte[]) msg.obj, "UTF-8"); //입력 메세지 넣는 부분
+
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
 
@@ -277,8 +202,48 @@ public class HomeFragment extends Fragment {
                     token = readMessage.split("A");
                     connect = true;
 
+                    //실시간으로 압력값을 받아서 평균내는 함수
+                    if (connect) {
 
+                        try {
+                            left = Integer.parseInt(token[2]);
+                        } catch (NumberFormatException e) {
+                            left = 0;
+                        } catch (Exception e) {
+                            left = 0;
+                        }
+                        try {
+                            right = Integer.parseInt(token[0]);
+                        } catch (NumberFormatException e) {
+                            right = 0;
+                        } catch (Exception e) {
+                            right = 0;
+                        }
+                        if (left < 0)
+                            left = 0;
+                        if (right < 0)
+                            right = 0;
 
+                        sum_left += left;
+                        sum_right += right;
+
+                        sum = sum_left + sum_right;
+
+                        if (sum == 0) {
+                            newleft = 50;
+                            newright = 50;
+                        } else {
+                            newleft = sum_left * 100 / sum;
+                            newright = sum_right * 100 / sum;
+                        }
+
+                        String temp = "왼쪽 : " + String.valueOf(left) + " 오른쪽 : " + String.valueOf(right);
+                        Toast.makeText(getContext(), String.valueOf(temp), Toast.LENGTH_LONG).show();
+
+                        leftimage.getLayoutParams().height = 1022 - (newleft * 1022 / 100);
+                        rightimage.getLayoutParams().height = 1022 - (newright * 1022 / 100);
+
+                    }
                 }
             }
         };
@@ -291,31 +256,30 @@ public class HomeFragment extends Fragment {
     }
 
     void bluetoothOn() {
-        if(mBluetoothAdapter == null) {
+        if (mBluetoothAdapter == null) {
             Toast.makeText(getContext(), "블루투스를 지원하지 않는 기기입니다.", Toast.LENGTH_LONG).show();
-        }
-        else {
+        } else {
             if (mBluetoothAdapter.isEnabled()) {
                 Toast.makeText(getContext(), "블루투스가 이미 활성화 되어 있습니다.", Toast.LENGTH_LONG).show();
                 mTvBluetoothStatus.setText("활성화");
-            }
-            else {
+            } else {
                 Toast.makeText(getContext(), "블루투스가 활성화 되어 있지 않습니다.", Toast.LENGTH_LONG).show();
                 Intent intentBluetoothEnable = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(intentBluetoothEnable, BT_REQUEST_ENABLE);
             }
         }
     }
+
     void bluetoothOff() {
         if (mBluetoothAdapter.isEnabled()) {
             mBluetoothAdapter.disable();
             Toast.makeText(getContext(), "블루투스가 비활성화 되었습니다.", Toast.LENGTH_SHORT).show();
             mTvBluetoothStatus.setText("비활성화");
-        }
-        else {
+        } else {
             Toast.makeText(getContext(), "블루투스가 이미 비활성화 되어 있습니다.", Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -331,6 +295,7 @@ public class HomeFragment extends Fragment {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
     void listPairedDevices() {
         if (mBluetoothAdapter.isEnabled()) {
             mPairedDevices = mBluetoothAdapter.getBondedDevices();
@@ -356,13 +321,15 @@ public class HomeFragment extends Fragment {
                 AlertDialog alert = builder.create();
                 alert.show();
             } else {
-                getContext ();          }
+                getContext();
+            }
+        } else {
+            getContext();
         }
-        else {
-            getContext();      }
     }
+
     void connectSelectedDevice(String selectedDeviceName) {
-        for(BluetoothDevice tempDevice : mPairedDevices) {
+        for (BluetoothDevice tempDevice : mPairedDevices) {
             if (selectedDeviceName.equals(tempDevice.getName())) {
                 mBluetoothDevice = tempDevice;
                 break;
@@ -399,6 +366,7 @@ public class HomeFragment extends Fragment {
             mmInStream = tmpIn;
             mmOutStream = tmpOut;
         }
+
         public void run() {
             byte[] buffer = new byte[1024];
             int bytes;
@@ -417,6 +385,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         }
+
         public void write(String str) {
             byte[] bytes = str.getBytes();
             try {
@@ -425,6 +394,7 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "데이터 전송 중 오류가 발생했습니다.", Toast.LENGTH_LONG).show();
             }
         }
+
         public void cancel() {
             try {
                 mmSocket.close();
@@ -433,6 +403,7 @@ public class HomeFragment extends Fragment {
             }
         }
     }
+
     public String getCurrentTime() {
         long time = System.currentTimeMillis();
 
