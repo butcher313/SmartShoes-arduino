@@ -259,7 +259,7 @@ void setup() {
 
 void loop() {
 
-///////////////////////////////////////
+/////////////////////////////////////// 압력 센서로부터 압력값을 
   int val0=analogRead(A0);
   int val1=analogRead(A1);
   int val2=analogRead(A2);
@@ -350,7 +350,7 @@ void loop() {
             //Serial.println();
             //Serial.println(ypr[2] * 180/M_PI);
 
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////// 기울기 값 다루는 파트 
             float angle;
 
             if(time_cur - time_prev > 20000) {
@@ -376,7 +376,10 @@ void loop() {
                   analogWrite(3, 0);
              }
             */
-            if(time_cur - time_prev > 1000) {
+        
+            // 1초 마다, 데이터를 송신하는 아두이노에 신호를 보내서 데이터를 받아옴
+        
+            if(time_cur - time_prev > 1000) { 
               time_prev = time_cur;
 
               Serial.write('A');
@@ -387,7 +390,8 @@ void loop() {
               ext_press = Serial.read() * 9;
             
              //Serial.print( "내부 압력 값 : " + String(total_in) + " 내부 각도 값 : " + String(ypr[0] * 180/M_PI) + "\n" + " 외부 압력 값 : " + String(ext_press) + " 외부 기울기 값 : " + String(ext_angle));
-
+            
+             // 왼쪽 신발의 데이터와 오른쪽 신발의 데이터를 알파벳 A로 구분하여 블루투스로 안드로이드에 전송
              BTSerial.println(String(total_in) + 'A' + String(ypr[0] * 180/M_PI) + 'A' + String(ext_press) + 'A' + String(ypr[0] * 180/M_PI + 3.15));          
             }
 
